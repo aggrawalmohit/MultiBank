@@ -19,6 +19,10 @@ export class Utils {
         return this.page.getByRole('heading', {name,exact: true });
     }
 
+    async getByText(text:string){
+        return this.page.getByText(text);
+    }
+
     async clickAndVerifyRedirectionURL(locator: Locator, url: string) {
         await this.verifyIsVisible(locator)
         const [popup] = await Promise.all([

@@ -12,6 +12,9 @@ test('Verify Headings and text content on page @mohit', async ({ homePage,aboutP
         await homePage.navigateToAbout()
       });
       
-     await aboutPage.verifyHeadingaAndText(aboutPageData.foundedIn2005Subtext,aboutPageData.weBelieveTechnologySubtext,aboutPageData.trustIsEarnedSubtext)
+      await test.step('Verify Text and subtexts ', async () => {
+        await aboutPage.verifyHeadingaAndText()
+      });
+  
 
 });
