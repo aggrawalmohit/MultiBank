@@ -1,0 +1,16 @@
+{
+    "navLinks": [
+      
+    { "name": "Explore", "path": "https://mb.io/en/explore","external": false },
+      { "name": "Features", "path": "https://mb.io/en/features" ,"external": false },
+      { "name": "OTC Desk", "path": "https://mb.io/en/features/otc-desk" ,"external": false },
+      { "name": "Company", "path": "https://mb.io/en/company" ,"external": false },
+      { "name": "Support", "path": "https://mb.io/en/support" ,"external": false },
+      { "name": "Blog", "path": "https://mb.io/en/blog" ,"external": false },
+      {
+        "name": "$MBG",
+        "path": "https://token.mb.io/en",
+        "external": true
+      }
+    ]
+  }
