@@ -15,8 +15,12 @@ export class Utils {
         return this.page.getByRole('link', { name, exact: true });
     }
 
+    async getByHeading(name: string) {
+        return this.page.getByRole('heading', {name,exact: true });
+    }
+
     async clickAndVerifyRedirectionURL(locator: Locator, url: string) {
-        await expect(locator).toBeVisible();
+        await this.verifyIsVisible(locator)
         const [popup] = await Promise.all([
             this.page.waitForEvent('popup'),
             locator.click(),
@@ -30,4 +34,25 @@ export class Utils {
         await page.waitForLoadState('domcontentloaded')
         await expect(page).toHaveURL(url);
     }
+
+    async verifyIsVisible(locator:Locator){
+        await expect(locator).toBeVisible();
+    }
+
+    async verifyLocatorCount(locator:Locator,Expectedcount:number){
+        await locator.nth(1).waitFor({state:"visible"})
+        const count = await locator.count()
+        expect(count).toBe(Expectedcount);
+    }
+
+    async getLocatorCount(locator:Locator){
+        await locator.nth(1).waitFor({state:"visible"})
+        return await locator.count()
+    }
+
+    async verifyTextContent(locator:Locator,expectedText:string){
+        await expect(locator).toContainText(expectedText);
+    }
+
+
 }

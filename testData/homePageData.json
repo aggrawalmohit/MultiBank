@@ -12,5 +12,12 @@
         "path": "https://token.mb.io/en",
         "external": true
       }
-    ]
+    ],
+    "desktop": [
+    { "name": "Small Desktop", "width": 1280, "height": 800 },
+    { "name": "Standard Desktop", "width": 1440, "height": 900 },
+    { "name": "Large Desktop", "width": 1920, "height": 1080 }
+  ],
+  "MarketingBannerText":"Unblemished. Unstoppable. United.",
+  "appStoreLink":"https://play.google.com/store/apps/"
   }
