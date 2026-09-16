@@ -82,6 +82,11 @@ export class homePage {
       async verifyAppStoreLinkNavigation(url:string){
       await this.utils.clickAndVerifyRedirectionURL(await this.utils.getLinkByName(this.HomePageLocators.DownloadAppButton),url)
       }
+
+
+      async verifyHomePageBrokenLinks(){
+        await this.utils.verifyBrokenLinks();
+      }
 }
 
 

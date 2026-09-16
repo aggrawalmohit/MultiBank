@@ -1,4 +1,4 @@
-import { Locator, Page, expect } from "@playwright/test";
+import { Locator, Page, expect ,request} from "@playwright/test";
 
 export class Utils {
     readonly page: Page;
@@ -56,6 +56,36 @@ export class Utils {
 
     async verifyTextContent(locator:Locator,expectedText:string){
         await expect(locator).toContainText(expectedText);
+    }
+
+    async verifyBrokenLinks(){
+ const apiContext = await request.newContext();
+  const allLinks = this.page.locator('a[href]');
+  const count = await allLinks.count();
+
+  const seen = new Set<string>(); 
+
+  for (let i = 0; i < count; i++) {
+    const href = await allLinks.nth(i).getAttribute('href');
+
+    if (!href) continue;
+    if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:') || href.startsWith('/')) {
+      continue;
+    }
+
+    const url = href.startsWith('http') ? href : new URL(href).toString();
+
+    if (seen.has(url)) continue; // skip duplicates
+    seen.add(url);
+
+      const response = await apiContext.get(url);
+      expect.soft(response.status(), `${url} returned ${response.status()}`).toBeLessThan(400);
+    
+  }
+
+
+
+
     }
 
 
