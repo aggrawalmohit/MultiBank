@@ -5,30 +5,30 @@ Tech Stack - PlayWright + TypeScript
 
 ================== Folder Structure ===============
 
-├─- lib/
-│   ├── BasePage.ts          # Custom Playwright fixtures (page object injection)
-│   └── utils.ts              # Reusable utility/helper methods used across page objects
-│
-├── Pages/
-│   ├── homePage.ts           # Home page actions & verifications
-│   └── aboutPage.ts          # About page actions & verifications
-│
-├── locators/
-│   ├── homePageLocators.ts   # Element locators/selectors for the Home page
-│   └── aboutPageLocators.ts  # Element locators/selectors for the About page
-│
-├── testData/
-│   ├── homePageData.json     # Data-driven test inputs for Home page tests
-│   └── aboutPageData.json    # Data-driven test inputs for About page tests
-│
-├── configuration/
-│   └── env.ts                 # Environment/base URL configuration
-│
-├── tests/
-│   ├── homePage.spec.ts      # Home page test specs
-│   └── aboutPage.spec.ts     # About page test specs
-│
-└── README.md
+ # lib
+BasePage.ts          # Custom Playwright fixtures (page object injection)
+utils.ts              # Reusable utility/helper methods used across page objects
+
+ # Pages/
+homePage.ts           # Home page actions & verifications
+aboutPage.ts          # About page actions & verifications
+
+# locators/
+homePageLocators.ts   # Element locators/selectors for the Home page
+aboutPageLocators.ts  # Element locators/selectors for the About page
+
+# testData/
+homePageData.json     # Data-driven test inputs for Home page tests
+aboutPageData.json    # Data-driven test inputs for About page tests
+
+# configuration/
+env.ts                 # Environment/base URL configuration
+
+# tests/
+homePage.spec.ts      # Home page test specs
+aboutPage.spec.ts     # About page test specs
+
+# README.md
 
 ============= Design Pattern ============
 
